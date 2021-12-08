@@ -1,3 +1,4 @@
+const { Message } = require('discord.js');
 const misc_commands = require('./commands/misc.js')
 const mod_commands = require('./commands/mod.js')
 
@@ -13,7 +14,8 @@ console.log(all_commands);
 
 
 module.exports =
-async function commandHandler(prefix, msg) {
+async function commandHandler(bot, msg) {
+    const prefix = bot.prefix;
     const [cmdName, ...args] = msg.content
     .trim()
     .substring(prefix.length)
@@ -21,7 +23,7 @@ async function commandHandler(prefix, msg) {
     let command_exists = true;
     for (const property in all_commands) {
       if (all_commands[property]['alias'].includes(cmdName)){
-        all_commands[property]['func'](args);
+        all_commands[property]['func'](bot, msg, args);
         return
       }
       else{
@@ -29,6 +31,6 @@ async function commandHandler(prefix, msg) {
       }
     }
     if (command_exists === false){
-      console.log('that command doesn\'t exist')
+      msg.channel.send('that command doesn\'t exist')
     }
 }

@@ -2,19 +2,20 @@
 //each commands is broken up into two parts: the commands alias and the function to be ran
 //the command handler will be looking for aliases 
 
+const { Message } = require("discord.js")
+
 var commands = {
 
     ping: {alias: ["ping", "p"], 
     func: 
-    function (arg) {
-        console.log('pong!')
-        
+    function (bot, message, arg) {
+        message.channel.send('pong!');
     }},
 
 
     two: {alias: ["misc_test2"],
     func:
-    function (arg) {
+    function (bot, message, arg) {
         console.log('misc_test2')
     
     }}

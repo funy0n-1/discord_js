@@ -4,18 +4,18 @@
 
 var commands = {
 
-    mod_one: {alias: ["mod_test1"], 
+    kick: {alias: ["kick"], 
     func: 
-    function (arg) {
-        console.log('mod_test1')
+    function (bot, message, arg) {
+        message.channel.send(`kicked ${arg[0]}... jk`);
         
     }},
 
 
-    mod_two: {alias: ["mode_test2"],
+    mod_two: {alias: ["mod_test2"],
     func:
-    function (arg) {
-        console.log('mod_test2')
+    function (bot, message, arg) {
+        message.channel.send('mod_test2')
     
     }}
 }

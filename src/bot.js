@@ -3,6 +3,7 @@ require('dotenv').config();
 const { Client, Intents, Collection } = require('discord.js');
 const bot = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 const prefix = '.';
+bot.prefix = prefix;
 let token = process.env.token;
 bot.login(token);
 
@@ -16,6 +17,6 @@ const commandHandler = require('./commandHandler');
 bot.on('messageCreate', (message) => {
     if (message.author.bot) return;
     if (message.content.startsWith(prefix)) {
-        commandHandler(prefix, message);
+        commandHandler(bot, message);
     }
 });
