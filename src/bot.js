@@ -3,8 +3,8 @@ require('dotenv').config();
 const { Client, Intents, Collection } = require('discord.js');
 const bot = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 const prefix = '.';
-let token = process.env.botToken;
-bot.login(token)
+let token = process.env.token;
+bot.login(token);
 
 bot.on('ready', () => {
     console.log(`${bot.user.tag} is ready`)

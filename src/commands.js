@@ -1,13 +1,16 @@
 const misc_commands = require('./commands/misc.js')
 const mod_commands = require('./commands/mod.js')
 
-var all_commands = [misc_commands, mod_commands]
+var command_files = [misc_commands, mod_commands]
 
-all_commands.forEach(function(value){
-    let commands = [];
-    commands.push(value());
-    console.log(commands);
+var all_commands = new Object();
+
+command_files.forEach(function(value){
+    all_commands = Object.assign(all_commands, value());
   });
+
+console.log(all_commands);
+
 
 module.exports =
 async function commandHandler(prefix, msg) {

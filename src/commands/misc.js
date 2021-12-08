@@ -4,10 +4,10 @@
 
 var commands = {
 
-    one: {alias: ["misc_test"], 
+    ping: {alias: ["ping"], 
     func: 
     function (arg) {
-        console.log('misc_test1')
+        console.log('pong!')
         
     }},
 

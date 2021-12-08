@@ -4,7 +4,7 @@
 
 var commands = {
 
-    one: {alias: ["mod_test1"], 
+    mod_one: {alias: ["mod_test1"], 
     func: 
     function (arg) {
         console.log('mod_test1')
@@ -12,7 +12,7 @@ var commands = {
     }},
 
 
-    two: {alias: ["mode_test2"],
+    mod_two: {alias: ["mode_test2"],
     func:
     function (arg) {
         console.log('mod_test2')
