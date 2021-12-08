@@ -20,5 +20,4 @@ async function commandHandler(prefix, msg) {
     .split(/\s+/);
     console.log(cmdName);
     console.log(args);
-    console.log(misc_commands())
 }
