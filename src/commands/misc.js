@@ -4,7 +4,7 @@
 
 var commands = {
 
-    ping: {alias: ["ping"], 
+    ping: {alias: ["ping", "p"], 
     func: 
     function (arg) {
         console.log('pong!')

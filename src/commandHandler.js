@@ -18,6 +18,17 @@ async function commandHandler(prefix, msg) {
     .trim()
     .substring(prefix.length)
     .split(/\s+/);
-    console.log(cmdName);
-    console.log(args);
+    let command_exists = true;
+    for (const property in all_commands) {
+      if (all_commands[property]['alias'].includes(cmdName)){
+        all_commands[property]['func'](args);
+        return
+      }
+      else{
+        command_exists = false;
+      }
+    }
+    if (command_exists === false){
+      console.log('that command doesn\'t exist')
+    }
 }

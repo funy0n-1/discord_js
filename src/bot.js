@@ -11,7 +11,7 @@ bot.on('ready', () => {
 });
 
 
-const commandHandler = require('./commands');
+const commandHandler = require('./commandHandler');
 
 bot.on('messageCreate', (message) => {
     if (message.author.bot) return;
